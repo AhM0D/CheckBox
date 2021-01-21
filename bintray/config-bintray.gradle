@@ -1,0 +1,44 @@
+apply plugin: 'com.jfrog.bintray'
+
+version = '1.0.0-alpha01'
+
+if (project.getPlugins().hasPlugin('com.android.application') ||
+        project.getPlugins().hasPlugin('com.android.library')) {
+    task androidSourcesJar(type: Jar) {
+        classifier = 'sources'
+        from android.sourceSets.main.java.source
+    }
+} else {
+    task sourcesJar(type: Jar, dependsOn: classes) {
+        classifier = 'sources'
+        from sourceSets.main.allSource
+    }
+}
+
+artifacts {
+    if (project.getPlugins().hasPlugin('com.android.application') ||
+            project.getPlugins().hasPlugin('com.android.library')) {
+        archives androidSourcesJar
+    } else {
+        archives sourcesJar
+    }
+}
+
+bintray {
+    def properties = new Properties()
+    properties.load(new FileInputStream("local.properties"))
+
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = "CheckBox"
+        name = project.package_id
+        websiteUrl = 'https://github.com/AhM0D/Checkbox'
+        vcsUrl = 'https://github.com/AhM0D/Checkbox.git'
+        licenses = ["Apache-2.0"]
+        publish = true
+        publicDownloadNumbers = true
+    }
+}

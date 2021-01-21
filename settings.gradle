@@ -1,0 +1,3 @@
+include ':CircleCheckbox'
+include ':app'
+rootProject.name = "MaterialCheckbox"
