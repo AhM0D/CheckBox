@@ -12,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:backgroundColor="@color/blue"
-        app:borderColor="@color/red"
+        app:borderColor="@color/white"
         app:borderSize="2dp"
         app:checkIconColor="@color/white"
         app:checkIconSize="8dp"
@@ -20,14 +20,15 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:strokeDegree="180"
-        app:strokeStartAngle="0" />
+        app:strokeDegree="360"
+        app:strokeStartAngle="180" />
 
     <FrameLayout
         android:id="@+id/customView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="24dp"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
