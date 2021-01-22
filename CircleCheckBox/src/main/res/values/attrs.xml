@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleCheckBox">
+        <attr name="checkIconSize" format="dimension" />
+        <attr name="borderSize" format="dimension" />
+        <attr name="borderColor" format="color" />
+        <attr name="checkIconColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="strokeStartAngle" format="integer"/>
+        <attr name="strokeDegree" format="integer"/>
+    </declare-styleable>
+
+</resources>
