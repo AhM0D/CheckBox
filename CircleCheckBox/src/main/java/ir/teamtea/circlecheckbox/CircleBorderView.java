@@ -39,12 +39,19 @@ class CircleBorderView implements Animator.AnimatorListener {
         this.onCircleBorderAnimListener = onCircleBorderAnimListener;
         this.duration = duration;
         this.startAngle = startAngle;
+        validateDegree(this.degree);
         initView(color);
     }
 
     private void initView(int color) {
         initCanvasTools(color);
         createAnimator();
+    }
+
+    private void validateDegree(float degree) {
+        if (degree <= 0 || degree > 360) {
+            throw new IllegalArgumentException("degree should be between 0 and 360");
+        }
     }
 
     public void setWidth(int width) {
@@ -69,7 +76,7 @@ class CircleBorderView implements Animator.AnimatorListener {
     }
 
     private void createAnimator() {
-        mAnimator = ValueAnimator.ofFloat(0, degree);
+        mAnimator = ValueAnimator.ofFloat(0, degree - 0.1f);
         mAnimator.setDuration(duration);
         mAnimator.setInterpolator(new DecelerateInterpolator());
 
@@ -134,7 +141,8 @@ class CircleBorderView implements Animator.AnimatorListener {
     }
 
     public void setDegree(float degree) {
-        this.degree = degree - 0.1f;
+        validateDegree(degree);
+        this.degree = degree;
         createAnimator();
     }
 
