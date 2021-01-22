@@ -2,9 +2,9 @@
 
 [![Download](https://api.bintray.com/packages/teamteagroup/CheckBox/CircleCheckBox/images/download.svg) ](https://bintray.com/teamteagroup/CheckBox/CircleCheckBox/_latestVersion)
 
-## CircleCheckBox Screenshot：
+## CircleCheckBox：
 <p align="center">
-<img src="/screenShot/demo.gif" alt="screenshot" title="screenshot"/>
+<img src="/screenShot/demo.gif" alt="screenshot" title="screenshot" width="500" height="400"/>
 </p>
 
 ## Attrs
