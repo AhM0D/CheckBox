@@ -1,6 +1,6 @@
 apply plugin: 'com.jfrog.bintray'
 
-version = '1.0.0-alpha02'
+version = '1.0.0-alpha03'
 
 if (project.getPlugins().hasPlugin('com.android.application') ||
         project.getPlugins().hasPlugin('com.android.library')) {
